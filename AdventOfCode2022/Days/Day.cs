@@ -9,7 +9,7 @@ namespace AdventOfCode2022.Days
 {
     abstract public class Day
     {
-        public abstract int DayNumber { get; set; }
+        protected int DayNumber { get; set; }
 
         protected string InputPath { get; set; }
 
@@ -21,5 +21,16 @@ namespace AdventOfCode2022.Days
 
         abstract public void Part1();
         abstract public void Part2();
+        abstract public void Setup();
+
+        protected string[] GetInput()
+        {
+            return System.IO.File.ReadAllLines(InputPath);
+        }
+
+        protected void Log(string message)
+        {
+            Console.WriteLine($"[{DateTime.Now.ToString("hh:mm:ss")}] [DAY {DayNumber}]: {message}");
+        }
     }
 }
