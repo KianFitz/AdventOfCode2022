@@ -19,9 +19,9 @@ namespace AdventOfCode2022.Days
             InputPath = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location) + $@"\Inputs\Day{DayNumber}.txt";
         }
 
+        abstract public void Setup();
         abstract public void Part1();
         abstract public void Part2();
-        abstract public void Setup();
 
         protected string[] GetInput()
         {
